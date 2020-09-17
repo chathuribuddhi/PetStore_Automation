@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9f7c837f-37a7-4aa7-b90d-4d6c0c5ada25" activeEnvironment="Default environment" name="REST Project 1" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="3.3.2 2020-08-19T12:03:33Z" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="6c51cdfb-c272-48a7-bbc3-777e9c8810af" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://petstore.swagger.io</con:endpoint></con:endpoints><con:resource name="V2" path="/v2/pet" id="61cd9477-b928-4991-b949-9b1558ed353f"><con:settings/><con:parameters/><con:method name="V2 1" id="0bc766c8-4e82-4bac-b283-ba868b451910" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pet="https://petstore.swagger.io/v2/pet">pet:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>405</con:status><con:params/><con:element xmlns:pet="https://petstore.swagger.io/v2/pet">pet:Fault</con:element></con:representation><con:request name="Create_Pet" id="73a87505-461c-48e8-a282-a682d22d0944" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request>{
+  "id": 0,
+  "category": {
+    "id": 1,
+    "name": "Dog"
+  },
+  "name": "1",
+  "photoUrls": [
+    "https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=300&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=20c1a08d26568b0d2623dfc8a59c0e44"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}</con:request><con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="2d5bbdf2-6903-4bc2-a333-947c320e9c6b" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://petstore.swagger.io</con:endpoint></con:endpoints><con:resource name="Pet" path="/v2/pet/{petId}" id="557d8b41-8276-4f71-b22d-0ffcb409c94b"><con:settings/><con:parameters><con:parameter><con:name>petId</con:name><con:style>TEMPLATE</con:style></con:parameter></con:parameters><con:method name="Pet 1" id="cc9e05ba-ef6e-4ef2-9a39-b43424716e6a" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/xml</con:mediaType><con:status>405 404</con:status><con:params/><con:element>apiResponse</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pet="https://petstore.swagger.io/">pet:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:pet="https://petstore.swagger.io/">pet:Fault</con:element></con:representation><con:request name="Search_Pet_By_Id" id="9a77cdfa-6dcc-4d9e-9c64-36192546fefa" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>https://petstore.swagger.io/</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="petId" value="10000000000000520" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>petId</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="7a025668-5410-47ce-93ee-4e49d94f3752" name="Pet"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ad7748e7-3f80-4cd7-accc-36e249d407c1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Cteate new pet" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="REST Request" id="3d88816f-8501-4cd4-96a4-2f35b11946be"><con:settings/><con:config service="https://petstore.swagger.io" methodName="V2 1" resourcePath="/v2/pet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="REST Request" id="6826287e-7d25-4ce0-94e7-06349ccfc26f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request>{
+  "id": 0,
+  "category": {
+    "id": 1,
+    "name": "string"
+  },
+  "name": "Teena",
+  "photoUrls": [
+    "https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=300&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=20c1a08d26568b0d2623dfc8a59c0e44"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}</con:request><con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri><con:assertion type="GroovyScriptAssertion" id="1b9ddce8-3495-4138-bb4c-10a806c87944" name="Script Assertion"><con:configuration><scriptText>//imports
+import groovy.json.JsonSlurper
+
+//grab the response
+def ResponseMessage = messageExchange.response.responseContent
+
+// replace "(starting&amp;ending), [](starting&amp;ending) and \ with space from response
+def TrimResponse =ResponseMessage.replaceAll('^\"|\"$','').replaceAll('^\\[|\\]$','')replaceAll('\\\\','')
+
+//define a JsonSlurper
+def jsonSlurper = new JsonSlurper().parseText(TrimResponse)
+
+//verify the slurper isn't empty
+//assert !(jsonSlurper.isEmpty())
+
+//verify the pet name
+def ActualCategoryName = jsonSlurper."category"."name"
+//log.info categoryName
+def ExpectedCategoryName = context.getTestCase().getTestSuite().getPropertyValue("category")
+assert ExpectedCategoryName == ActualCategoryName</scriptText></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="bd338929-6abe-493b-8168-5a090e3b4236" name="JsonPath Match"><con:configuration><path>$category.id</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="8cac095a-65b1-4bed-8bed-45726c1599a3" name="Script Assertion 1"><con:configuration><scriptText>//imports
+import groovy.json.JsonSlurper
+
+//grab the response
+def ResponseMessage = messageExchange.response.responseContent
+
+// replace "(starting&amp;ending), [](starting&amp;ending) and \ with space from response
+def TrimResponse =ResponseMessage.replaceAll('^\"|\"$','').replaceAll('^\\[|\\]$','')replaceAll('\\\\','')
+
+//define a JsonSlurper
+def jsonSlurper = new JsonSlurper().parseText(TrimResponse)
+
+//verify the slurper isn't empty
+//assert !(jsonSlurper.isEmpty())
+
+//verify the pet name
+def ActualCategoryName = jsonSlurper."category"."name"
+
+log.info ActualCategoryName
+//def ExpectedCategoryName = context.getTestCase().getTestSuite().getPropertyValue("category")
+//assert ExpectedCategoryName == ActualCategoryName</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="75e886b2-722c-430c-9737-56a34201f1d8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Search Created Pet by Id" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Create_Pet" id="7193c7d3-7352-42aa-9efd-b343a4c06876"><con:settings/><con:config service="https://petstore.swagger.io" resourcePath="/v2/pet" methodName="V2 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Create_Pet" id="73a87505-461c-48e8-a282-a682d22d0944" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request>{
+  "id": 0,
+  "category": {
+    "id": 1,
+    "name": "Cat1"
+  },
+  "name": "Teena",
+  "photoUrls": [
+    "https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=300&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=20c1a08d26568b0d2623dfc8a59c0e44"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}</con:request><con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri><con:assertion type="JsonPath Match" id="b6f8cd13-cd38-49f1-beea-e14bf76b6d86" name="JsonPath Match"><con:configuration/></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="properties" name="Properties" id="5876b7e2-24dd-41c1-a489-e482c620ec35"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>PetId</con:name><con:value>10000000000000316</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="search_pet" id="2dcfd856-19ee-42ac-95fa-027150006aec"><con:settings/><con:config service="https://petstore.swagger.io" resourcePath="/v2/pet/{petId}" methodName="Pet 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="search_pet" id="9a77cdfa-6dcc-4d9e-9c64-36192546fefa" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>https://petstore.swagger.io/</con:originalUri><con:assertion type="GroovyScriptAssertion" id="428ee0c4-b343-4d04-9d43-dd15ad39e0b3" name="Script Assertion"><con:configuration><scriptText>//imports
+import groovy.json.JsonSlurper
+
+//grab the response
+def ResponseMessage = messageExchange.response.responseContent
+
+// replace "(starting&amp;ending), [](starting&amp;ending) and \ with space from response
+def TrimResponse =ResponseMessage.replaceAll('^\"|\"$','').replaceAll('^\\[|\\]$','')replaceAll('\\\\','')
+
+//define a JsonSlurper
+def jsonSlurper = new JsonSlurper().parseText(TrimResponse)
+
+//verify the slurper isn't empty
+//assert !(jsonSlurper.isEmpty())
+
+//verify the pet name
+def ActualCategoryName = jsonSlurper."category"."name"
+def ActualPetName = jsonSlurper."name"
+def ActualResult
+if(ActualCategoryName=="Cat1" &amp;&amp; ActualPetName=="Teena"){
+	ActualResult = true;
+	}
+def ExpectedResult = true;
+//log.info categoryName
+//def ExpectedCategoryName = context.getTestCase().getTestSuite().getPropertyValue("category")
+assert ExpectedResult == ActualResult</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="petId" value="10000000000000824" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>petId</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>category</con:name><con:value>string</con:value></con:property></con:properties><con:reportParameters/></con:testSuite><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>
